@@ -32,7 +32,7 @@ const Project = () => {
     };
   });
   return (
-    <ParallaxLayer factor={1} offset={1} speed={-3} style={{ zIndex: "-11" }}>
+    <ParallaxLayer offset={1} speed={-3} style={{ zIndex: "-11" }}>
       <div className="projects">
         <h1 className="project-title">Projets</h1>
         <hr className="project-border"></hr>

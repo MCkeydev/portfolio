@@ -4,6 +4,7 @@ import Banner from "./components/banner/banner.component";
 import LogoBanner from "./components/logo-banner/logo-banner.component";
 import Decoration from "./components/decoration-banner/decoration-banner.component";
 import Project from "./components/project-banner/project.component";
+import Competence from "./components/competence_banner/competence.component";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 import logo from "./logo.svg";
@@ -25,6 +26,7 @@ function App() {
         <Banner to={1} handler={scroll} />
         <Decoration />
         <Project />
+        <Competence />
       </Parallax>
     </div>
   );

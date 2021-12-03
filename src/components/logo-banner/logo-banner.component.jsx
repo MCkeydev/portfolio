@@ -1,21 +1,23 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ParallaxLayer } from "@react-spring/parallax";
-import { ReactComponent as Cross } from "../../assets/icons/cross.svg";
-import { ReactComponent as Dna } from "../../assets/icons/dna.svg";
-import { ReactComponent as Flag } from "../../assets/icons/flag.svg";
-import { ReactComponent as Globe } from "../../assets/icons/globe1.svg";
-import { ReactComponent as GlobeTwo } from "../../assets/icons/globe2.svg";
-import { ReactComponent as Hash } from "../../assets/icons/hash.svg";
-import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
-import { ReactComponent as Moon } from "../../assets/icons/moon.svg";
-import { ReactComponent as Music } from "../../assets/icons/music.svg";
-import { ReactComponent as Plus } from "../../assets/icons/plus.svg";
+import { ReactComponent as Cross } from "../../assets/space-icons/death-star.svg";
+import { ReactComponent as Dna } from "../../assets/space-icons/earth.svg";
+import { ReactComponent as Flag } from "../../assets/space-icons/galaxy.svg";
+import { ReactComponent as Globe } from "../../assets/space-icons/ISS.svg";
+import { ReactComponent as Hash } from "../../assets/space-icons/jupiter.svg";
+import { ReactComponent as Heart } from "../../assets/space-icons/satellite.svg";
+import { ReactComponent as Moon } from "../../assets/space-icons/saturn.svg";
+import { ReactComponent as Music } from "../../assets/space-icons/astronaut.svg";
+import { ReactComponent as Plus } from "../../assets/space-icons/t-fighter.svg";
 import "./logo-banner.styles.scss";
 
+gsap.registerPlugin(MotionPathPlugin);
 const LogoBanner = () => {
   const introTimeline = () => {
     let tl = gsap.timeline({});
+
     tl.to(
       ".narrow",
       {
