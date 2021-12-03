@@ -1,0 +1,10 @@
+.decoration-banner {
+  opacity: 0.3;
+  background: linear-gradient(
+    90deg,
+    hsla(194, 77%, 38%, 1) 0%,
+    hsla(206, 66%, 34%, 1) 100%
+  );
+  height: 50vh;
+  transform: skewY(3deg);
+}

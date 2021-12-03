@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import react, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import Banner from "./components/banner/banner.component";
+import LogoBanner from "./components/logo-banner/logo-banner.component";
+import Decoration from "./components/decoration-banner/decoration-banner.component";
+import Project from "./components/project-banner/project.component";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+
+import logo from "./logo.svg";
+import "./App.scss";
+import "./styles/global.styles.scss";
 
 function App() {
+  const parallax = useRef(null);
+  const scroll = (to) => {
+    if (parallax.current) {
+      parallax.current.scrollTo(to);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Parallax pages={3} style={{ top: "0", left: "0" }} ref={parallax}>
+        <LogoBanner />
+        <Banner to={1} handler={scroll} />
+        <Decoration />
+        <Project />
+      </Parallax>
     </div>
   );
 }
