@@ -1,9 +1,11 @@
 import { ParallaxLayer } from "@react-spring/parallax";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import "./project.styles.scss";
 
 const Project = () => {
+  let navigate = useNavigate();
   const entryAnimation = (entries, _) => {
     if (!entries[0].isIntersecting) return;
     let tl = gsap.timeline({});
@@ -13,6 +15,11 @@ const Project = () => {
       stagger: {
         amount: 1,
       },
+    }).to(".more-button", {
+      duration: 1.2,
+      y: 0,
+      opacity: 1,
+      ease: "backIn",
     });
   };
 
@@ -95,6 +102,25 @@ const Project = () => {
                 vanillaJS, HTML5 and SASS.{" "}
               </p>
             </div>
+          </div>
+          <div
+            onClick={() => {
+              let tl = gsap.timeline({
+                onComplete: () => {
+                  navigate("/projects");
+                },
+              });
+              tl.to(".transition1", {
+                width: "100%",
+
+                stagger: {
+                  amount: 0.3,
+                },
+              });
+            }}
+            className="more-button"
+          >
+            See More
           </div>
         </div>
       </div>
